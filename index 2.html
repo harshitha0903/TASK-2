@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Page</title>
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            /* height: 100vh; */
+            justify-content: center;
+            /* align-items: center; */
+            background-color: #f0f0f0;
+        }
+
+        .img-box{
+            background-color: #d78b35;
+            border: 1px black solid;
+            width: 100vh;
+            text-align: center;
+        }
+        .img-box input {
+             width: 50%;
+            padding: 10px;
+            border: 1px black solid;
+            font-size: 15px;
+        }
+ 
+        .img-box button{
+            background-color: #cd265b;
+            width: 10%;
+            padding: 7px;
+            border: none;
+            color: rgb(246, 248, 249);
+        }
+        .todo-list{
+            background-color: #f19d26;
+            height: 80vh;
+            width: 60%;
+            margin-left: 155px;
+            margin-top: 20px;
+            text-align: left;
+            border: 1px black solid;
+        }
+        .todo-list ol li{
+            list-style: lower-roman;
+        }
+
+        .todo-list ol li span {
+            flex: 1;
+        }
+
+        .todo-list ol li {
+            padding: 10px;
+            margin: 5px 0;
+            border:none;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        } 
+        .gallery-list ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="img-box">
+        <h1>Image Gallery</h1>
+        <input type="text" id="image-url" placeholder="Add an Umage URL" required>
+        <button onclick="addImage()">Add one</button>
+        <div class="gallery-list">
+        <ul id="gallery-list">
+        </ul>
+        </div>
+    </div>
+<script>
+    function addImage() {
+        const input = document.getElementById('image-url');
+        const imageurl =input.value.trim();
+        if (imageUrl) {
+            const list= document.getElementById("gallery-list");
+            const listItem = document.createElement('li');
+
+            const image= document.createElement('img');
+            image.src= imageurl;
+            image.alt= "Gallery Image";
+
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Remove';
+            deleteButton.onclick = function() {
+                list.removeChild(listitem);
+            };
+
+            listItem.appendChild(Image);
+            listItem.appendChild(deleteButton);
+            list.appendChild(listitem);
+
+            input.value='';
+        }
+    }
+    </script>
+</body>
+</html>
